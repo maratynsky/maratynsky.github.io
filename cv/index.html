@@ -19,7 +19,7 @@
     
     blockquote p.hp:before {
       content: '“';
-      position: absolute;
+      /* position: absolute; */
       margin-left: -.4em;
     }
 
@@ -34,7 +34,20 @@
       a {
         color: black;
       }
-      div{
+      .xxx {
+        width: 40%;
+        margin-right: 2rem;
+      }
+      .yyy {
+        max-width: 44rem;
+        margin-left: 3rem; 
+        padding:0;
+      }
+      .avatar {
+        width: 4rem;
+        height: 4rem;
+      }
+      p {
         page-break-inside: avoid;
       }
     }
@@ -58,17 +71,17 @@
       </nav>
     </div> -->
 
-    <div class="mw6 w-100 center mt0 pa3 pv4 black-70 serif lh-copy">
+    <div class="mw6 w-100 center mt0 pa3 pt4 black-70 serif lh-copy yyy">
       <div class="flex flex-wrap lh-solid">
-        <div class="w-50-ns w-100">
+        <div class="w-50-ns w-100 xxx">
             <header class="tc pr3-ns">
-              <img src="/avatar.jpg" class="br-100 pa1 ba b--black-10 h4 w4" 
+              <img src="/avatar.jpg" class="avatar br-100 pa1 ba b--black-10 h4 w4" 
                 alt="avatar">
               <h1 class="fw9 f4 f5-ns fw6 mid-gray">Marat Tukhvatullin</h1>
               <h2 class="f6 f7-ns gray fw2 ttu tracked">Software Engineer</h2>
             </header>
         </div>
-        <div class="w-50-ns w-100 bl-ns b--black-20">
+        <div class="w-50-ns w-100 bl-ns b--black-20 xxx">
             <p class="f6 f6-ns pl1 pl4-ns pl3-m lh-copy gray">
                 Düsseldorf, Germany<br>
                 +49 01745492034<br>
@@ -171,7 +184,6 @@
           technology, Cinarra is creating the foundation for a new mobile
           Internet economy.
         </p>
-          
         <p>
           Leading investors: SoftBank, Almaz Capital, and Cisco Systems.
         </p>
@@ -311,8 +323,7 @@
         </dl>
       </div>
 
-      <br/>
-      <div class="tc w-100 np">
+      <div class="tc w-100 np mt4">
         <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-blue w4" 
           href="mailto:maratynsky@gmail.com?subject=Dream%20job&body=Hi%20Marat,">
           Email me
@@ -325,7 +336,7 @@
       </div>
 
 
-      <div class="tc f7 mt4 black-20">
+      <div class="tc f7 mt4 black-20 np">
         March 2020
       </div>
 
