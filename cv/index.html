@@ -13,6 +13,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
+  <meta name="theme-color" 
+      content="#fff" 
+      media="(prefers-color-scheme: light)">
+  <meta name="theme-color" 
+      content="#000" 
+      media="(prefers-color-scheme: dark)">
+
   <style>
     .serif {font-family: 'Open Sans', sans-serif;}
     html { font-size: 18px; -webkit-text-size-adjust: 100%; }
@@ -58,6 +65,47 @@
     .rotate:hover, .rotate:active {
       -webkit-transform: rotate(360deg);
               transform: rotate(360deg);
+    }
+
+    @media (prefers-color-scheme: light) {
+      body {
+        background: white;
+        color: black;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #000
+      }
+      .gray {
+          color: #aaa;
+      }
+      .mid-gray {
+        color: #ccc
+      }
+      p {
+        color: #eee
+      }
+      .black-70 {
+        color:#ccc
+      }
+      .bg-light-yellow {
+        background: rgb(87, 21, 109)
+      }
+
+      a {
+        color: rgb(101, 168, 207)
+      }
+
+      a:visited {
+        color: rgb(165, 46, 204)
+      }
+
+      .black-20{
+        color:#777
+      }
+
     }
   </style>
 
