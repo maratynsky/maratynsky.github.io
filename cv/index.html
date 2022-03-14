@@ -13,11 +13,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
+  <meta name="format-detection" content="telephone=no">
+
   <meta name="theme-color" 
       content="#fff" 
       media="(prefers-color-scheme: light)">
   <meta name="theme-color" 
-      content="#000" 
+      content="rgb(21, 20, 26)" 
       media="(prefers-color-scheme: dark)">
 
   <style>
@@ -72,34 +74,43 @@
         background: white;
         color: black;
       }
+
+      a {
+        color: rgb(0, 0, 238)
+      }
     }
 
     @media (prefers-color-scheme: dark) {
       body {
-        background: #000
+        background: rgb(21, 20, 26)
       }
       .gray {
-          color: #aaa;
+          color: rgb(204, 204, 207);
       }
       .mid-gray {
-        color: #ccc
+        color: rgb(251, 251, 254)
       }
       p {
         color: #eee
       }
       .black-70 {
-        color:#ccc
+        color: rgb(255, 255, 254)
       }
       .bg-light-yellow {
-        background: rgb(87, 21, 109)
+        background: rgb(58, 56, 68);
+      }
+
+      .ba {
+        border-color: rgb(58, 56, 68);
+        color: rgb(207, 207, 216);
       }
 
       a {
-        color: rgb(101, 168, 207)
+        color: rgb(116, 169, 246)
       }
 
       a:visited {
-        color: rgb(165, 46, 204)
+        /* color: rgb(165, 46, 204) */
       }
 
       .black-20{
