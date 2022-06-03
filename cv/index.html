@@ -78,6 +78,14 @@
       a {
         color: rgb(0, 0, 238)
       }
+
+      .job-title:before {
+        color:rgb(223, 223, 223);
+      }
+      
+      div.dark-buttons {
+        display: none;
+      }
     }
 
     @media (prefers-color-scheme: dark) {
@@ -109,14 +117,51 @@
         color: rgb(116, 169, 246)
       }
 
-      a:visited {
-        /* color: rgb(165, 46, 204) */
-      }
-
       .black-20{
         color:#777
       }
 
+      .job-title:before {
+        color:rgb(69, 69, 69);
+      }
+
+      div.light-buttons {
+        display: none;
+      }
+
+    }
+
+    .job-title:before {
+        content: '¶';
+        position: absolute;
+        margin-left: -1.3em;
+      }
+
+    @media (max-width: 38rem) {                  
+      .job-title:before {
+          display: none;
+      }
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: max-content auto;
+    }
+
+    dt {
+      grid-column-start: 1;
+    }
+
+    dd {
+      padding-left: 5px;
+      grid-column-start: 2;
+    }
+
+    
+
+    hr {
+      border: none;
+      height: 1px;
     }
   </style>
 
@@ -169,8 +214,8 @@
       <h2 class="fw9">Work Experience</h2>
 
       <p>
-        <strong class="fw9">Senior Software engineer, Instana (IBM)</strong><br>
-        <em>Software development, Germany, 03/2021-present</em><br>
+        <strong class="fw9 job-title" id="instana">Senior Software engineer, Instana (IBM)</strong><br>
+        <em>Observability Platform, APM. Germany, 03/2021-present</em><br>
         <a href="https://www.instana.com/">instana.com</a>
       </p>
 
@@ -190,12 +235,12 @@
         ...
       </p>
 
-      <hr class="black-20">
+      <hr class="bg-bg-black-20">
       <!-- ======================================================= -->
 
       <p>
-        <strong class="fw9">Senior Software engineer, tick Trading Software AG</strong><br>
-        <em>Software development, Düsseldorf, Germany, 06/2020-02/2021</em><br>
+        <strong class="fw9 job-title" id="tick-ts">Senior Software engineer, tick Trading Software AG</strong><br>
+        <em>Software development. Düsseldorf, Germany, 06/2020-02/2021</em><br>
         <a href="https://www.tick-ts.de/">tick-ts.de</a>
       </p>
 
@@ -211,12 +256,12 @@
         Developing high performance distributed trading platform. 
       </p>
 
-      <hr class="black-20">
+      <hr class="bg-black-20">
       <!-- ======================================================= -->
 
       <p>
-        <strong class="fw9">Senior Software engineer, freshcells systems engineering GmbH</strong><br>
-        <em>Software development, Düsseldorf, Germany, 06/2018-05/2020</em><br>
+        <strong class="fw9 job-title" id="freshcells">Senior Software engineer, freshcells systems engineering GmbH</strong><br>
+        <em>Software development. Düsseldorf, Germany, 06/2018-05/2020</em><br>
         <a href="https://www.freshcells.de/">freshcells.de</a>
       </p>
 
@@ -269,12 +314,12 @@
           </p>
         </div>
       </div>
-      <hr class="black-20">
+      <hr class="bg-black-20">
       <!-- ======================================================= -->
       
       <p>
-        <strong class="fw9">Team lead / Software engineer, Cinarra Systems</strong><br>
-        <em>Advertising Technology, Kazan, Russia, 12/2012–05/2018</em><br>
+        <strong class="fw9 job-title" id="cinarra">Team lead / Software engineer, Cinarra Systems</strong><br>
+        <em>Advertising Technology. Kazan, Russia, 12/2012–05/2018</em><br>
         <a href="https://www.cinarra.com/">cinarra.com</a>
       </p>
 
@@ -334,12 +379,12 @@
           </li>
         </ul>
       </p>
-      <hr class="black-20">
+      <hr class="bg-black-20">
       <!-- ======================================================= -->
 
       <p>
-        <strong class="fw9">Software engineer, Center Group</strong><br>
-        <em>Software Development, Kazan, Russia, 09/2009-11/2012</em><br>
+        <strong class="fw9 job-title" id="cg">Software engineer, Center Group</strong><br>
+        <em>Software Development. Kazan, Russia, 09/2009-11/2012</em><br>
         <a href="https://www.cg.ru/">cg.ru</a>
       </p>
   
@@ -369,12 +414,12 @@
           </li>
         </ul>
       </p>
-      <hr class="black-20">
+      <hr class="bg-black-20">
       <!-- ======================================================= -->
 
       <p>
-        <strong class="fw9">Web developer, Volga Crisis Management Institute</strong><br>
-        <em>Software Development, Kazan, Russia, 09/2008-08/2009</em><br>
+        <strong class="fw9 job-title" id="pai">Web developer, Volga Crisis Management Institute</strong><br>
+        <em>Software Development. Kazan, Russia, 09/2008-08/2009</em><br>
         <a href="http://www.pai.ru/">pai.ru</a>
       </p>
     
@@ -395,7 +440,7 @@
       <h2 class="fw9">Education</h2>
 
       <p>
-        <strong class="fw9">Master of Computer Science</strong><br>
+        <strong class="fw9 job-title" id="kai">Master of Computer Science</strong><br>
         Kazan National Research Technical University<br>
         <em>Diploma with honors, Kazan, Russia, 2005-2010</em><br>
         <a href="https://www.kai.ru/">kai.ru</a>
@@ -411,7 +456,7 @@
       
 
 
-      <h2 class="fw9">Skills</h2>
+      <h2 class="fw9" id="skills">Skills</h2>
 
       <div>
         <dl class="f6 lh-title mv2">
@@ -424,11 +469,11 @@
         </dl>
         <dl class="f6 lh-title mv2">
           <dt class="dib b">Frameworks:</dt>
-          <dd class="dib ml0 gray">Spring, Spring Boot</dd>
+          <dd class="dib ml0 gray">Spring, Spring Boot, Dropwizard</dd>
         </dl>
-        <dl class="f6 lh-title mv2">
+        <dl class="f6 lh-title mv2 inline">
           <dt class="dib b">Databases:</dt>
-          <dd class="dib ml0 gray">PostgreSQL, MySQL, MongoDB, CouchBase, CouchDB</dd>
+          <dd class="dib ml0 gray">PostgreSQL, MySQL, MongoDB, CouchBase, CouchDB, Clickhouse, Cassandra</dd>
         </dl>
         <dl class="f6 lh-title mv2">
           <dt class="dib b">Asynchronous event processing:</dt>
@@ -448,21 +493,37 @@
         </dl>
       </div>
 
-      <div class="tc w-100 np mt4">
-        <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-blue w4" 
-          href="mailto:maratynsky@gmail.com?subject=Dream%20job&body=Hi%20Marat,">
-          Email me
-        </a>
-         
-        <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-green w4" 
-          href="Marat_Tukhvatullin_CV.pdf">
-          Download CV
-        </a>
+      <div class="dark-buttons">
+        <div class="tc w-100 np mt4">
+          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-dark-blue w4" 
+            href="mailto:maratynsky@gmail.com?subject=Dream%20job&body=Hi%20Marat,">
+            Email me
+          </a>
+          
+          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-dark-green w4" 
+            href="Marat_Tukhvatullin_CV.pdf">
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <div class="light-buttons">
+        <div class="tc w-100 np mt4">
+          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-blue w4" 
+            href="mailto:maratynsky@gmail.com?subject=Dream%20job&body=Hi%20Marat,">
+            Email me
+          </a>
+          
+          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-green w4" 
+            href="Marat_Tukhvatullin_CV.pdf">
+            Download CV
+          </a>
+        </div>
       </div>
 
 
       <div class="tc f7 mt4 black-20 np">
-        March 2022
+        June 2022
       </div>
 
 
