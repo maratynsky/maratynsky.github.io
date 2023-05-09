@@ -23,7 +23,16 @@
       media="(prefers-color-scheme: dark)">
 
   <style>
-    .serif {font:20px/1.4 arial,sans-serif}
+    .serif {
+      /* font: 20px/1.4 sans-serif; */
+      font-family: -apple-system, BlinkMacSystemFont,
+               'avenir next', avenir,
+               helvetica, 'helvetica neue',
+               ubuntu,
+               roboto, noto,
+               'segoe ui', arial,
+               sans-serif;      
+    }
     html { font-size: 18px; -webkit-text-size-adjust: 100%; }
     
     blockquote p.hp:before {
@@ -34,6 +43,11 @@
 
     blockquote p.hp:after {
       content: '”';
+    }
+
+    blockquote {
+      font-style: italic;
+      font-weight: 200;
     }
 
     @media print {
@@ -155,6 +169,38 @@
       border: none;
       height: 1px;
     }
+
+    /* .show-full:focus ~ .short {
+      display: none;
+    }
+    .show-short:focus ~ .short {
+      display: block;
+    }
+
+    .show-full:focus ~ .full {
+      display: block;
+    }
+    .show-short:focus ~ .full {
+      display: none;
+    } */
+
+    #show,.full {display:none;}
+    #show:checked ~ .full {display:block;} 
+
+    .short {display:block;}
+    #show:checked ~ .short {display:none;} 
+
+    .link {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .toggle {
+      position: fixed; 
+      top: 0; 
+      right: 0.5em;
+    }
+
   </style>
 
 </head>
@@ -180,7 +226,7 @@
             <header class="tc pr3-ns">
               <img src="/avatar.jpg" class="rotate avatar br-100 pa1 ba b--black-10 h4 w4" 
                 alt="avatar">
-              <h1 class="fw9 f4 f5-ns fw6 mid-gray">Marat Tukhvatullin</h1>
+              <h1 class="fw8 f4 f5-ns fw6 mid-gray">Marat Tukhvatullin</h1>
               <h2 class="f6 f7-ns gray fw2 ttu tracked">Software Engineer</h2>
             </header>
         </div>
@@ -197,16 +243,110 @@
       </div>
 
 
-      <p>
+      <input checked type=checkbox id="show" class="np"/>
+      <label for="show" class="short np toggle"><a class="link">Full version</a></label>
+      <label for="show" class="full np toggle"><a class="link">Short version</a></label>
+      
+      <p class="short">
         Hello! I am Marat, I am a software developer and I develop software.
       </p>
+
+      <p class="full">
+        Hello! I am Marat, a skilled software developer with a passion for creating 
+        high-quality software solutions. With a strong foundation in software development 
+        principles and methodologies, I specialize in designing and implementing robust and 
+        scalable applications. My expertise spans across various programming languages 
+        and technologies, allowing me to tackle diverse software development projects 
+        with precision and efficiency. I am committed to staying up-to-date with the 
+        latest industry trends and continuously expanding my skill set to deliver 
+        innovative and cutting-edge software solutions.
+      </p>
+
+
+      <h2 class="fw8" id="skills">Skills</h2>
+
+      <div>
+        <dl class="f6 lh-title mv2">
+          <dt class="dib b">Programming languages:</dt>
+          <dd class="dib ml0 gray">
+            <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Java</span> 
+            <span class="ba br2 ph1 f7 sans-serif">Kotlin</span>
+            <span class="ba br2 ph1 f7 sans-serif">Python</span>
+            <span class="ba br2 ph1 f7 sans-serif">Clojure</span></dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Build tools:</span>
+            <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Gradle</span>
+            <span class="ba br2 ph1 f7 sans-serif">Maven</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Frameworks:</span>
+            <span class="ba br2 ph1 f7 sans-serif">Spring</span>
+            <span class="ba br2 ph1 f7 sans-serif">Spring Boot</span>
+            <span class="ba br2 ph1 f7 sans-serif">Dropwizard</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Databases:</span>
+            <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">PostgreSQL</span>
+            <span class="ba br2 ph1 f7 sans-serif">MySQL</span>
+            <span class="ba br2 ph1 f7 sans-serif">MongoDB</span>
+            <span class="ba br2 ph1 f7 sans-serif">CouchBase</span>
+            <span class="ba br2 ph1 f7 sans-serif">CouchDB</span>
+            <span class="ba br2 ph1 f7 sans-serif">Clickhouse</span>
+            <span class="ba br2 ph1 f7 sans-serif">Cassandra</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Asynchronous event processing:</span>
+            <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Kafka</span>
+            <span class="ba br2 ph1 f7 sans-serif">RabbitMQ</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Version control:</span>
+            <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Git</span>
+            <span class="ba br2 ph1 f7 sans-serif">Mercurial</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">DevOps:</span>
+            <span class="ba br2 ph1 f7 sans-serif">Docker</span>
+            <span class="ba br2 ph1 f7 sans-serif">Kubernetes</span>
+            <span class="ba br2 ph1 f7 sans-serif">Helm</span>
+            <span class="ba br2 ph1 f7 sans-serif">Jenkins</span>
+            <span class="ba br2 ph1 f7 sans-serif">BitBucket</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Non Technical:</span>
+            <span class="ba br2 ph1 f7 sans-serif">Team Management</span>
+            <span class="ba br2 ph1 f7 sans-serif">Scrum</span>
+            <span class="ba br2 ph1 f7 sans-serif">Kanban</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Others:</span>
+            <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Hazelcast</span>
+          </dd>
+        </dl>
+      </div>
       
 
 
-      <h2 class="fw9">Work Experience</h2>
+      <h2 class="fw8">Work Experience</h2>
 
       <p>
-        <strong class="fw9 job-title" id="instana">Senior Software engineer, Instana (IBM)</strong><br>
+        <strong class="fw8 job-title" id="instana">Senior Software engineer, Instana (IBM)</strong><br>
         <em>Observability Platform, APM. Germany, 03/2021-present</em><br>
         <a href="https://www.instana.com/">instana.com</a>
       </p>
@@ -223,16 +363,26 @@
         <span class="ba br2 ph1 f7 sans-serif">Monitoring</span>
       </p>
 
-      <p>
-        ...
+      <blockquote class="full">
+        <p class="hp">
+          Instana is an application performance monitoring (APM) platform that helps 
+          organizations monitor and analyze the performance of their applications and 
+          infrastructure in real-time. It provides comprehensive observability into the 
+          entire application stack, including microservices, containers, cloud environments, 
+          and more.
+        </p>
+      </blockquote>
+
+      <p class="full">
+        TODO
       </p>
 
       <hr class="bg-black-20">
       <!-- ======================================================= -->
 
       <p>
-        <strong class="fw9 job-title" id="tick-ts">Senior Software engineer, tick Trading Software AG</strong><br>
-        <em>Software development. Düsseldorf, Germany, 06/2020-02/2021</em><br>
+        <strong class="fw8 job-title" id="tick-ts">Senior Software engineer, tick Trading Software AG</strong><br>
+        <em>Fintech. Düsseldorf, Germany, 06/2020-02/2021</em><br>
         <a href="https://www.tick-ts.de/">tick-ts.de</a>
       </p>
 
@@ -242,17 +392,29 @@
         <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Multithreading</span>
         <span class="ba br2 ph1 f7 sans-serif">MySQL</span>
         <span class="ba br2 ph1 f7 sans-serif">Docker</span>
+        <span class="ba br2 ph1 f7 sans-serif">k8s</span>
       </p>
 
-      <p>
-        Developing high performance distributed trading platform. 
+      <blockquote class="full">
+        <p class="hp">
+          Tick TS AG specializes in high-performance trading software for financial markets. 
+          They provide innovative technology solutions to optimize trading strategies and operations, 
+          helping clients make informed decisions and enhance their trading performance.
+        </p>
+      </blockquote>
+
+      <p class="full">
+        In my role, I was responsible for developing a high-performance distributed trading platform. 
+        Throughout the development process, I conducted rigorous testing and performance analysis 
+        to identify and resolve bottlenecks, ensuring that the trading platform met the stringent 
+        requirements of the financial industry.
       </p>
 
       <hr class="bg-black-20">
       <!-- ======================================================= -->
 
       <p>
-        <strong class="fw9 job-title" id="freshcells">Senior Software engineer, freshcells systems engineering GmbH</strong><br>
+        <strong class="fw8 job-title" id="freshcells">Senior Software engineer, freshcells systems engineering GmbH</strong><br>
         <em>Software development. Düsseldorf, Germany, 06/2018-05/2020</em><br>
         <a href="https://www.freshcells.de/">freshcells.de</a>
       </p>
@@ -279,14 +441,13 @@
       </p>
 
 
-      <div class="">
-        <strong class="fw9">Projects</strong>
+      <div class="full">
+        <strong class="fw8">Project: ProMaterial</strong>
+        <br>
+        <a href="https://www.promaterial.com">promaterial.com</a>
         <div class="">
-          <strong class="f6">ProMaterial (<a href="https://www.promaterial.com">promaterial.com</a>) </strong>
-          <p>
-            Worked on the project as senior backend developer. Designing, 
-            developing and deploying highly distributed microservice oriented platform.
-          </p>
+          
+          
           <blockquote>
             <p class="hp">
               ProMaterial is the new technology network specialising in online 
@@ -297,12 +458,22 @@
               Austria and Switzerland.
             </p>
           </blockquote>
-        </div>
-        <div class="">
-          <strong class="f6">Fusion (<a href="https://www.freshcells.de/en/products/fusion">freshcells.de/products/fusion</a>) </strong>
+
           <p>
-            Designed, build, maintained CI/CD for the project using Jenkins and Bitbucket Pipelines. 
-            Designed and developed Spring-Boot based reactive microservices.
+            As a senior backend developer, my role encompassed working on a project that 
+            involved the design, development, and deployment of a event-driven platform 
+            based on microservices architecture.
+          </p>
+
+        </div>
+        <div class="full">
+          <strong class="fw8">Project: Fusion</strong>
+          <br>
+          <a href="https://www.freshcells.de/en/products/fusion">freshcells.de/products/fusion</a>
+          <p>
+            I was involved in the design and development of reactive microservices 
+            based on Spring Boot. Additionally, I took charge of designing, building, 
+            and maintaining the project's CI/CD pipeline using Jenkins and Bitbucket Pipelines.
           </p>
         </div>
       </div>
@@ -310,7 +481,7 @@
       <!-- ======================================================= -->
       
       <p>
-        <strong class="fw9 job-title" id="cinarra">Team lead / Software engineer, Cinarra Systems</strong><br>
+        <strong class="fw8 job-title" id="cinarra">Team lead / Software engineer, Cinarra Systems</strong><br>
         <em>Advertising Technology. Kazan, Russia, 12/2012–05/2018</em><br>
         <a href="https://www.cinarra.com/">cinarra.com</a>
       </p>
@@ -333,7 +504,7 @@
         <span class="ba br2 ph1 f7 sans-serif nowrap bg-light-yellow">Project management</span>
       </p>
 
-      <blockquote>
+      <blockquote class="full">
         <p class="hp">
           Cinarra is a technology startup that is addressing the
           changing economics of an increasingly mobile society. By uniting
@@ -349,33 +520,39 @@
         </p>
       </blockquote>
 
-      <p>
-        I was responsible for:
-        <ul>
-          <li>
-            Digital advertising campaign management web platform, 
-            the platform enables advertisers to create campaigns; 
-            specify individual ads, associated budgets, targeting 
-            and technical parameters; upload and manage creative; 
-            as well as receive performance reports
-          </li>
-          <li>
-            Financial subsystem, that responsible for funds 
-            management lifecycle starting from adding funds to 
-            campaigns, record and including all steps involved 
-            in subsequent credit/debit operations
-          </li>
-          <li>
-            Databases from business logic perspective. Data 
-            consistency, data migration/flow
-          </li>
-        </ul>
-      </p>
+      <div class="full">
+        <p>
+          During my role, I had the following responsibilities:
+          <ul>
+            <li>
+              Overseeing a web platform for managing digital advertising 
+              campaigns. This platform empowered advertisers to create 
+              campaigns, set up individual ads with budgets, targeting 
+              parameters, and technical specifications. Additionally, 
+              it facilitated creative management and provided performance 
+              reports.
+            </li>
+            <li>
+              Managing the financial subsystem, which encompassed the 
+              entire lifecycle of fund management for campaigns. This 
+              involved processes such as adding funds to campaigns 
+              and maintaining detailed records of all credit and debit 
+              operations.
+            </li>
+            <li>
+              Ensuring the integrity and smooth functioning of databases 
+              from a business logic perspective. This included maintaining 
+              data consistency, overseeing data migration processes, and 
+              ensuring the seamless flow of data.
+            </li>
+          </ul>
+        </p>
+      </div>
       <hr class="bg-black-20">
       <!-- ======================================================= -->
 
       <p>
-        <strong class="fw9 job-title" id="cg">Software engineer, Center Group</strong><br>
+        <strong class="fw8 job-title" id="cg">Software engineer, Center Group</strong><br>
         <em>Software Development. Kazan, Russia, 09/2009-11/2012</em><br>
         <a href="https://www.cg.ru/">cg.ru</a>
       </p>
@@ -384,7 +561,7 @@
         <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Java</span>
         <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Spring</span>
         <span class="ba br2 ph1 f7 sans-serif">Maven</span>
-        <span class="ba br2 ph1 f7 sans-serif">Hibernate</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Hibernate</span>
         <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Tomcat</span>
         <span class="ba br2 ph1 f7 sans-serif">Portlets</span>
         <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">PostgreSQL</span>
@@ -394,23 +571,25 @@
         <span class="ba br2 ph1 f7 sans-serif">Ant</span>
       </p>
 
-      <p>
-        Worked on multiple projects with different technologies.  
-        <ul>
-          <li>
-            Desktop applications for government agencies: 
-            "Technical Inventory Bureau" and "Registry Office"
-          </li>
-          <li>
-            Full-stack development of web applications and portals
-          </li>
-        </ul>
-      </p>
+      <div class="full">
+        <p>
+          Worked on multiple projects with different technologies.  
+          <ul>
+            <li>
+              Desktop applications for government agencies: 
+              "Technical Inventory Bureau" and "Registry Office"
+            </li>
+            <li>
+              Full-stack development of web applications and portals
+            </li>
+          </ul>
+        </p>
+      </div>
       <hr class="bg-black-20">
       <!-- ======================================================= -->
 
       <p>
-        <strong class="fw9 job-title" id="pai">Web developer, Volga Crisis Management Institute</strong><br>
+        <strong class="fw8 job-title" id="pai">Web developer, Volga Crisis Management Institute</strong><br>
         <em>Software Development. Kazan, Russia, 09/2008-08/2009</em><br>
         <a href="http://www.pai.ru/">pai.ru</a>
       </p>
@@ -423,16 +602,16 @@
         <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">MySQL</span>
       </p>
 
-      <p>
-        Full stack PHP, JavaScript development of real estate 
-        agency web site and internal administrator panels. 
+      <p class="full">
+        I developed a full-stack web application for a real estate agency, utilizing PHP and JavaScript. 
+        This included creating the agency's website and internal administrator panels.
       </p>
 
 
-      <h2 class="fw9">Education</h2>
+      <h2 class="fw8">Education</h2>
 
       <p>
-        <strong class="fw9 job-title" id="kai">Master of Computer Science</strong><br>
+        <strong class="fw8 job-title" id="kai">Master of Computer Science</strong><br>
         Kazan National Research Technical University<br>
         <em>Diploma with honors, Kazan, Russia, 2005-2010</em><br>
         <a href="https://www.kai.ru/">kai.ru</a>
@@ -446,44 +625,6 @@
         <span class="ba br2 ph1 f7 sans-serif">Networking</span>
       </p>
       
-
-
-      <h2 class="fw9" id="skills">Skills</h2>
-
-      <div>
-        <dl class="f6 lh-title mv2">
-          <dt class="dib b">Programming languages:</dt>
-          <dd class="dib ml0 gray">Java, Kotlin, Python, Clojure</dd>
-        </dl>
-        <dl class="f6 lh-title mv2">
-          <dt class="dib b">Build tools:</dt>
-          <dd class="dib ml0 gray">Gradle, Maven</dd>
-        </dl>
-        <dl class="f6 lh-title mv2">
-          <dt class="dib b">Frameworks:</dt>
-          <dd class="dib ml0 gray">Spring, Spring Boot, Dropwizard</dd>
-        </dl>
-        <dl class="f6 lh-title mv2 inline">
-          <dt class="dib b">Databases:</dt>
-          <dd class="dib ml0 gray">PostgreSQL, MySQL, MongoDB, CouchBase, CouchDB, Clickhouse, Cassandra</dd>
-        </dl>
-        <dl class="f6 lh-title mv2">
-          <dt class="dib b">Asynchronous event processing:</dt>
-          <dd class="dib ml0 gray">Kafka, RabbitMQ</dd>
-        </dl>
-        <dl class="f6 lh-title mv2">
-          <dt class="dib b">Version control:</dt>
-          <dd class="dib ml0 gray">Git, Mercurial</dd>
-        </dl>
-        <dl class="f6 lh-title mv2">
-          <dt class="dib b">DevOps:</dt>
-          <dd class="dib ml0 gray">Docker, Kubernetes, Helm, Jenkins, BitBucket</dd>
-        </dl>
-        <dl class="f6 lh-title mv2">
-          <dt class="dib b">Non Technical:</dt>
-          <dd class="dib ml0 gray">Team Management, Scrum, Kanban</dd>
-        </dl>
-      </div>
 
       <div class="dark-buttons">
         <div class="tc w-100 np mt4">
@@ -515,7 +656,7 @@
 
 
       <div class="tc f7 mt4 black-20 np">
-        June 2022
+        2023
       </div>
 
 
