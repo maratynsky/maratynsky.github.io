@@ -192,13 +192,21 @@
 
     .link {
       cursor: pointer;
-      text-decoration: underline;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
     }
 
     .toggle {
       position: fixed; 
       top: 0; 
-      right: 0.5em;
+      right: 1em;
+    }
+
+    .greyscale {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
     }
 
   </style>
@@ -244,8 +252,8 @@
 
 
       <input checked type=checkbox id="show" class="np"/>
-      <label for="show" class="short np toggle"><a class="link np">Full version</a></label>
-      <label for="show" class="full np toggle"><a class="link np">Short version</a></label>
+      <label for="show" class="short np toggle"><a class="link np" title="Show full version">🩳</a></label>
+      <label for="show" class="full np toggle"><a class="link np greyscale" title="Show short version">🩳</a></label>
       
       <p class="short">
         Hello! I am Marat, I am a software developer and I develop software.
