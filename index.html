@@ -65,14 +65,18 @@
 
     }
 
+    nav a {
+      font-size: 3rem;
+    } 
+
     @media (max-width: 58rem) {                  
       .f-headline {
         font-size: 4rem;
       }
 
-      .f2 {
-        font-size: 3rem;
-      }
+      nav a {
+        font-size: 2.5rem;
+      }      
     }
 
     @media (max-width: 38rem) {                  
@@ -80,11 +84,16 @@
         font-size: 3rem;
       }
 
-      .f2 {
+      nav a {
         font-size: 2rem;
       }
-    }
 
+      nav span {
+        line-height: 1.5;
+        width: 100%;
+        display: block;
+      }
+    }
   </style>
 
 </head>
@@ -95,9 +104,9 @@
       </h1>
 
       <nav class="">
-        <a class="link black-70 serif f2 mr3 fw2" href="./cv" title="">resume</a>
-        <a class="link black-70 serif f2 mr3 fw2" href="http://github.com/maratynsky" title="">github</a>
-        <a class="link black-70 serif f2 mr3 fw2" href="https://www.instagram.com/maratynskycarving" title="">wood carving</a>
+        <span><a class="link black-70 serif mr3 fw2" href="./cv" title="">resume</a></span>
+        <span><a class="link black-70 serif mr3 fw2" href="http://github.com/maratynsky" title="">github</a></span>
+        <span><a class="link black-70 serif mr3 fw2 nowrap" href="https://www.instagram.com/maratynskycarving" title="">wood carving</a></span>
       </nav>
     </div>
   </body>
