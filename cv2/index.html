@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Curriculum Vitae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Marat Tukhvatullin CV, software developer">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <meta name="format-detection" content="telephone=no">
+
+  <meta name="theme-color" 
+      content="#fff" 
+      media="(prefers-color-scheme: light)">
+  <meta name="theme-color" 
+      content="rgb(21, 20, 26)" 
+      media="(prefers-color-scheme: dark)">
+
+  <style>
+    
+    html { font-size: 1.1rem; -webkit-text-size-adjust: 100%; }
+    
+    blockquote p.hp:before {
+      content: '“';
+      /* position: absolute; */
+      margin-left: -.4em;
+    }
+
+    blockquote p.hp:after {
+      content: '”';
+    }
+
+    blockquote {
+      font-style: italic;
+      font-weight: 200;
+    }
+
+    @media print {
+      .np {
+        display: none;
+      }
+      a {
+        color: black;
+      }
+      .xxx {
+        width: 60%;
+        
+      }
+      .zzz {
+        width: 40%;
+        padding-left: 2rem;
+      }
+      .yyy {
+        max-width: 44rem;
+        padding:0;
+      }
+      .avatar {
+        width: 4rem;
+        height: 4rem;
+      }
+      p {
+        page-break-inside: avoid;
+      }
+    }
+
+    .rotate {
+      -webkit-transition: -webkit-transform .9s cubic-bezier(0.23, 1, 0.320, 1);
+              transition:         transform .9s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+    .rotate:hover, .rotate:active {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+
+    @media (prefers-color-scheme: light) {
+      body {
+        background: white;
+        color: black;
+      }
+
+      a {
+        color: rgb(77, 77, 77);
+        text-decoration-color: #ff80cc;
+        text-decoration-thickness: 2px;
+      }
+
+      a:hover {
+        background-color: #ff80cc;
+        text-decoration: none;
+      }
+
+      .job-title:before {
+        color:rgb(223, 223, 223);
+      }
+      
+      div.dark-buttons {
+        display: none;
+      }
+
+      .bg-light-yellow {
+        background: rgb(231, 231, 231);
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: rgb(21, 20, 26)
+      }
+      .gray {
+          color: rgb(204, 204, 207);
+      }
+      .mid-gray {
+        color: rgb(251, 251, 254)
+      }
+      p {
+        color: #eee
+      }
+      .black-70 {
+        color: rgb(255, 255, 254)
+      }
+      .bg-light-yellow {
+        background: rgb(58, 56, 68);
+      }
+
+      .ba {
+        border-color: rgb(58, 56, 68);
+        color: rgb(207, 207, 216);
+      }
+
+      a {
+        color: #eee;
+        text-decoration-color: #D5008F;
+        text-decoration-thickness: 2px;
+      }
+
+      a:hover {
+        background-color: #D5008F;
+        text-decoration: none;
+      }
+
+      .black-20 {
+        color:#777
+      }
+
+      .bg-black-20 {
+        background-color:rgb(43, 43, 43)
+      }
+
+      .b--black-20 {
+        border-color: rgb(43, 43, 43)
+      }
+
+      .job-title:before {
+        color:rgb(69, 69, 69);
+      }
+
+      div.light-buttons {
+        display: none;
+      }
+
+    }
+
+    .job-title:before {
+      content: '¶';
+      position: absolute;
+      margin-left: -1.3em;
+    }
+
+    @media (max-width: 38rem) {                  
+      .job-title:before {
+          display: none;
+      }
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+    }
+
+
+    #show,.full {display:none;}
+    #show:checked ~ .full {display:block;} 
+
+    .short {display:block;}
+    #show:checked ~ .short {display:none;} 
+
+    .link {
+      cursor: pointer;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+
+    .toggle {
+      position: fixed; 
+      top: 0.5em; 
+      right: 1em;
+    }
+
+    .toggle a {
+      background: none;
+    }
+
+    .greyscale {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+
+    .f-headline {
+      font-size: 2.7rem;
+    }
+
+    /* @media (max-width: 58rem) {                  
+      .f-headline {
+        font-size: 2rem;
+      }
+    } */
+    @media (max-width: 38rem) {                  
+      .f-headline {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 30rem) {                  
+      .f-headline {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 24rem) {                  
+      .f-headline {
+        font-size: 2rem;
+      }
+    }
+
+  </style>
+
+<link rel="stylesheet" href="../theme.css">
+
+</head>
+  
+  <body>
+
+    <div class="mw7 left mt0 pa0 pl4 pr4 pb4 black-70 serif lh-copy yyy">
+      <div class="flex flex-wrap lh-solid">
+        <div class="w-60-ns w-100 xxx">
+            <header class="tc">
+              <h1 class="fw8 mid-gray f-headline mb1"><span>Marat Tukhvatullin</span></h1>
+              <h2 class="f5 f6-ns gray fw2 ttu tracked">Software Engineer</h2>
+            </header>
+        </div>
+        <div class="w-40-ns w-100 zzz">
+            <p class="f6 f6-ns pl4-ns pl3-m lh-copy gray">
+                Düsseldorf, Germany<br>
+                ‭+49 151 74404583‬<br>
+                <a target="_blank" href="mailto:maratynsky@gmail.com?subject=Dream%20job&body=Hi%20Marat,">
+                  maratynsky@gmail.com
+                </a><br>
+                <a href="https://www.linkedin.com/in/maratynsky/">linkedin.com/in/maratynsky</a>
+            </p>
+        </div>
+      </div>
+
+
+      <input checked type=checkbox id="show" class="np"/>
+      <label for="show" class="short np toggle"><a class="link np" title="Show full version">🩳</a></label>
+      <label for="show" class="full np toggle"><a class="link np greyscale" title="Show short version">🩳</a></label>
+      
+      <p class="short">
+        Hello! I am Marat, I am a software developer and I develop software.
+      </p>
+
+      <p class="full">
+        Hello! I am Marat, a skilled software developer with a passion for creating 
+        high-quality software solutions. With a strong foundation in software development 
+        principles and methodologies, I specialize in designing and implementing robust and 
+        scalable applications. My expertise spans across various programming languages 
+        and technologies, allowing me to tackle diverse software development projects 
+        with precision and efficiency. I am committed to staying up-to-date with the 
+        latest industry trends and continuously expanding my skill set to deliver 
+        innovative and cutting-edge software solutions.
+      </p>
+
+
+      <h2 class="fw8" id="skills">Skills</h2>
+
+      <div>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Programming languages:</span>
+            <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Java</span> 
+            <span class="ba br2 ph1 f7 sans-serif">Kotlin</span>
+            <span class="ba br2 ph1 f7 sans-serif">Python</span>
+            <span class="ba br2 ph1 f7 sans-serif">Clojure</span></dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Build tools:</span>
+            <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Gradle</span>
+            <span class="ba br2 ph1 f7 sans-serif">Maven</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Frameworks:</span>
+            <span class="ba br2 ph1 f7 sans-serif">Spring</span>
+            <span class="ba br2 ph1 f7 sans-serif">Spring Boot</span>
+            <span class="ba br2 ph1 f7 sans-serif">Dropwizard</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Databases:</span>
+            <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">PostgreSQL</span>
+            <span class="ba br2 ph1 f7 sans-serif">MySQL</span>
+            <span class="ba br2 ph1 f7 sans-serif">MongoDB</span>
+            <span class="ba br2 ph1 f7 sans-serif">CouchBase</span>
+            <span class="ba br2 ph1 f7 sans-serif">CouchDB</span>
+            <span class="ba br2 ph1 f7 sans-serif">Clickhouse</span>
+            <span class="ba br2 ph1 f7 sans-serif">Cassandra</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Asynchronous event processing:</span>
+            <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Kafka</span>
+            <span class="ba br2 ph1 f7 sans-serif">RabbitMQ</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Version control:</span>
+            <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Git</span>
+            <span class="ba br2 ph1 f7 sans-serif">Mercurial</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">DevOps:</span>
+            <span class="ba br2 ph1 f7 sans-serif">Docker</span>
+            <span class="ba br2 ph1 f7 sans-serif">Kubernetes</span>
+            <span class="ba br2 ph1 f7 sans-serif">Helm</span>
+            <span class="ba br2 ph1 f7 sans-serif">Jenkins</span>
+            <span class="ba br2 ph1 f7 sans-serif">BitBucket</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Non Technical:</span>
+            <span class="ba br2 ph1 f7 sans-serif">Team Management</span>
+            <span class="ba br2 ph1 f7 sans-serif">Scrum</span>
+            <span class="ba br2 ph1 f7 sans-serif">Kanban</span>
+          </dd>
+        </dl>
+        <dl class="f6 lh-title mv2">
+          <dd class="dib ml0 gray">
+            <span class="b black-70">Others:</span>
+            <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Hazelcast</span>
+          </dd>
+        </dl>
+      </div>
+      
+
+
+      <h2 class="fw8">Work Experience</h2>
+
+      <p>
+        <strong class="fw8 job-title" id="instana">Senior Software engineer, Instana (IBM)</strong><br>
+        <em>Observability Platform, APM. Germany, 03/2021-present</em><br>
+        <a href="https://www.instana.com/">instana.com</a>
+      </p>
+
+      <p>  
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Java</span>
+        <span class="ba br2 ph1 f7 sans-serif">Kotlin</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Reactor</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Kafka</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Hazelcast</span>
+        <span class="ba br2 ph1 f7 sans-serif nowrap">Elastic Search</span>
+        <span class="ba br2 ph1 f7 sans-serif">CockroachDB</span>
+        <span class="ba br2 ph1 f7 sans-serif">Clickhouse</span>
+        <span class="ba br2 ph1 f7 sans-serif">Monitoring</span>
+      </p>
+
+      <blockquote class="full">
+        <p class="hp">
+          Instana is an application performance monitoring (APM) platform that helps 
+          organizations monitor and analyze the performance of their applications and 
+          infrastructure in real-time. It provides comprehensive observability into the 
+          entire application stack, including microservices, containers, cloud environments, 
+          and more.
+        </p>
+      </blockquote>
+
+      <p class="full">
+        TODO
+      </p>
+
+      <hr class="bg-black-20">
+      <!-- ======================================================= -->
+
+      <p>
+        <strong class="fw8 job-title" id="tick-ts">Senior Software engineer, tick Trading Software AG</strong><br>
+        <em>Fintech. Düsseldorf, Germany, 06/2020-02/2021</em><br>
+        <a href="https://www.tick-ts.com">tick-ts.de</a>
+      </p>
+
+      <p>  
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Java</span>
+        <span class="ba br2 ph1 f7 sans-serif">Groovy</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Multithreading</span>
+        <span class="ba br2 ph1 f7 sans-serif">MySQL</span>
+        <span class="ba br2 ph1 f7 sans-serif">Docker</span>
+        <span class="ba br2 ph1 f7 sans-serif">k8s</span>
+      </p>
+
+      <blockquote class="full">
+        <p class="hp">
+          Tick TS AG specializes in high-performance trading software for financial markets. 
+          They provide innovative technology solutions to optimize trading strategies and operations, 
+          helping clients make informed decisions and enhance their trading performance.
+        </p>
+      </blockquote>
+
+      <p class="full">
+        In my role, I was responsible for developing a high-performance distributed trading platform. 
+        Throughout the development process, I conducted rigorous testing and performance analysis 
+        to identify and resolve bottlenecks, ensuring that the trading platform met the stringent 
+        requirements of the financial industry.
+      </p>
+
+      <hr class="bg-black-20">
+      <!-- ======================================================= -->
+
+      <p>
+        <strong class="fw8 job-title" id="freshcells">Senior Software engineer, freshcells systems engineering GmbH</strong><br>
+        <em>Software development. Düsseldorf, Germany, 06/2018-05/2020</em><br>
+        <a href="https://www.freshcells.de/">freshcells.de</a>
+      </p>
+
+      <p>  
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Java</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Kotlin</span>
+        <span class="ba br2 ph1 f7 sans-serif">Docker</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Kubernetes</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Helm</span>
+        <span class="ba br2 ph1 f7 sans-serif">GCP</span>
+        <span class="ba br2 ph1 f7 sans-serif">Jenkins</span>
+        <span class="ba br2 ph1 f7 sans-serif" title="Bitbucket Pipeline">Bitbucket</span>
+        <span class="ba br2 ph1 f7 sans-serif nowrap bg-light-yellow">Spring Boot</span>
+        <span class="ba br2 ph1 f7 sans-serif nowrap">Spring Cloud Data Flow</span>
+        <span class="ba br2 ph1 f7 sans-serif nowrap">Spring WebFlux</span>
+        <span class="ba br2 ph1 f7 sans-serif">RabbitMQ</span>
+        <span class="ba br2 ph1 f7 sans-serif">MongoDB</span>
+        <span class="ba br2 ph1 f7 sans-serif">MySQL</span>
+        <span class="ba br2 ph1 f7 sans-serif">PostgreSQL</span>
+        <span class="ba br2 ph1 f7 sans-serif nowrap">Elastic Search</span>
+        <span class="ba br2 ph1 f7 sans-serif">GraphQL</span>
+        <span class="ba br2 ph1 f7 sans-serif">RSocket</span>
+      </p>
+
+
+      <div class="full">
+        <strong class="fw8">Project: ProMaterial</strong>
+        <br>
+        <a href="https://www.promaterial.com">promaterial.com</a>
+        <div class="">
+          
+          
+          <blockquote>
+            <p class="hp">
+              ProMaterial is the new technology network specialising in online 
+              sales of construction products. The innovative sales concept 
+              supports the search for and the purchase of building materials 
+              within milliseconds in different channels. ProMaterial already 
+              lists 200 manufacturers with 500,000 products for sale in Germany, 
+              Austria and Switzerland.
+            </p>
+          </blockquote>
+
+          <p>
+            As a senior backend developer, my role encompassed working on a project that 
+            involved the design, development, and deployment of a event-driven platform 
+            based on microservices architecture.
+          </p>
+
+        </div>
+        <div>
+          <strong class="fw8">Project: Fusion</strong>
+          <br>
+          <a href="https://www.freshcells.de/en/products/fusion">freshcells.de/products/fusion</a>
+          <p>
+            I was involved in the design and development of reactive microservices 
+            based on Spring Boot. Additionally, I took charge of designing, building, 
+            and maintaining the project's CI/CD pipeline using Jenkins and Bitbucket Pipelines.
+          </p>
+        </div>
+      </div>
+      <hr class="bg-black-20">
+      <!-- ======================================================= -->
+      
+      <p>
+        <strong class="fw8 job-title" id="cinarra">Team lead / Software engineer, Cinarra Systems</strong><br>
+        <em>Advertising Technology. Kazan, Russia, 12/2012–05/2018</em><br>
+        <a href="https://www.cinarra.com/">cinarra.com</a>
+      </p>
+
+      <p>  
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Java</span>
+        <span class="ba br2 ph1 f7 sans-serif nowrap bg-light-yellow">Spring Boot</span>
+        <span class="ba br2 ph1 f7 sans-serif">Maven</span>
+        <span class="ba br2 ph1 f7 sans-serif">Python</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">PostgreSQL</span>
+        <span class="ba br2 ph1 f7 sans-serif">Hibernate</span>
+        <span class="ba br2 ph1 f7 sans-serif">Postgis</span>
+        <span class="ba br2 ph1 f7 sans-serif">AWS</span>
+        <span class="ba br2 ph1 f7 sans-serif">Docker</span>
+        <span class="ba br2 ph1 f7 sans-serif">Consul</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">CouchDB</span>
+        <span class="ba br2 ph1 f7 sans-serif">Couchbase</span>
+        <span class="ba br2 ph1 f7 sans-serif">Protobuf</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Kafka</span>
+        <span class="ba br2 ph1 f7 sans-serif nowrap bg-light-yellow">Project management</span>
+      </p>
+
+      <blockquote class="full">
+        <p class="hp">
+          Cinarra is a technology startup that is addressing the
+          changing economics of an increasingly mobile society. By uniting
+          mobile operators and their unique “always on” data
+          assets with the advertising ecosystem. Cinarra unlocks real-life
+          data that makes it possible for advertisers to match campaigns to
+          consumers' activities in the real world. Through groundbreaking
+          technology, Cinarra is creating the foundation for a new mobile
+          Internet economy.
+        </p>
+        <p>
+          Leading investors: SoftBank, Almaz Capital, and Cisco Systems.
+        </p>
+      </blockquote>
+
+      <div class="full">
+        <p>
+          During my role, I had the following responsibilities:
+          <ul>
+            <li>
+              Overseeing a web platform for managing digital advertising 
+              campaigns. This platform empowered advertisers to create 
+              campaigns, set up individual ads with budgets, targeting 
+              parameters, and technical specifications. Additionally, 
+              it facilitated creative management and provided performance 
+              reports.
+            </li>
+            <li>
+              Managing the financial subsystem, which encompassed the 
+              entire lifecycle of fund management for campaigns. This 
+              involved processes such as adding funds to campaigns 
+              and maintaining detailed records of all credit and debit 
+              operations.
+            </li>
+            <li>
+              Ensuring the integrity and smooth functioning of databases 
+              from a business logic perspective. This included maintaining 
+              data consistency, overseeing data migration processes, and 
+              ensuring the seamless flow of data.
+            </li>
+          </ul>
+        </p>
+      </div>
+      <hr class="bg-black-20">
+      <!-- ======================================================= -->
+
+      <p>
+        <strong class="fw8 job-title" id="cg">Software engineer, Center Group</strong><br>
+        <em>Software Development. Kazan, Russia, 09/2009-11/2012</em><br>
+        <a href="https://www.cg.ru/">cg.ru</a>
+      </p>
+  
+      <p>  
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Java</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Spring</span>
+        <span class="ba br2 ph1 f7 sans-serif">Maven</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Hibernate</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Tomcat</span>
+        <span class="ba br2 ph1 f7 sans-serif">Portlets</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">PostgreSQL</span>
+        <span class="ba br2 ph1 f7 sans-serif">GWT/ExtJS</span>
+        <span class="ba br2 ph1 f7 sans-serif">Swing</span>
+        <span class="ba br2 ph1 f7 sans-serif">Oracle</span>
+        <span class="ba br2 ph1 f7 sans-serif">Ant</span>
+      </p>
+
+      <div class="full">
+        <p>
+          Worked on multiple projects with different technologies.  
+          <ul>
+            <li>
+              Desktop applications for government agencies: 
+              "Technical Inventory Bureau" and "Registry Office"
+            </li>
+            <li>
+              Full-stack development of web applications and portals
+            </li>
+          </ul>
+        </p>
+      </div>
+      <hr class="bg-black-20">
+      <!-- ======================================================= -->
+
+      <p>
+        <strong class="fw8 job-title" id="pai">Web developer, Volga Crisis Management Institute</strong><br>
+        <em>Software Development. Kazan, Russia, 09/2008-08/2009</em><br>
+        <a href="http://www.pai.ru/">pai.ru</a>
+      </p>
+    
+      <p>  
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">PHP</span>
+        <span class="ba br2 ph1 f7 sans-serif">JavaScript</span>
+        <span class="ba br2 ph1 f7 sans-serif">JQuery</span>
+        <span class="ba br2 ph1 f7 sans-serif">CSS</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">MySQL</span>
+      </p>
+
+      <p class="full">
+        I developed a full-stack web application for a real estate agency, utilizing PHP and JavaScript. 
+        This included creating the agency's website and internal administrator panels.
+      </p>
+
+
+      <h2 class="fw8">Education</h2>
+
+      <p>
+        <strong class="fw8 job-title" id="kai">Master of Computer Science</strong><br>
+        Kazan National Research Technical University<br>
+        <em>Diploma with honors, Kazan, Russia, 2005-2010</em><br>
+        <a href="https://www.kai.ru/web/en">kai.ru</a>
+      </p>
+
+      <p>  
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Mathematics</span>
+        <span class="ba br2 ph1 f7 sans-serif bg-light-yellow nowrap">Computer Science</span>
+        <span class="ba br2 ph1 f7 sans-serif">Algorithms</span>
+        <span class="ba br2 ph1 f7 sans-serif nowrap">Data structures</span>
+        <span class="ba br2 ph1 f7 sans-serif">Networking</span>
+      </p>
+      
+
+      <div class="dark-buttons">
+        <div class="tc w-100 np mt4">
+          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-dark-blue w4" 
+            href="mailto:maratynsky@gmail.com?subject=Dream%20job&body=Hi%20Marat,">
+            Email me
+          </a>
+          
+          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-pink w4" 
+            href="Marat_Tukhvatullin_CV.pdf">
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <div class="light-buttons">
+        <div class="tc w-100 np mt4">
+          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-blue w4" 
+            href="mailto:maratynsky@gmail.com?subject=Dream%20job&body=Hi%20Marat,">
+            Email me
+          </a>
+          
+          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-pink w4" 
+            href="Marat_Tukhvatullin_CV.pdf">
+            Download CV
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
