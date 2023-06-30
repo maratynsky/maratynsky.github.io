@@ -34,7 +34,8 @@
     }
     
     .bg-pink, nav a:hover {
-      /* background-color: rgb(197, 63, 199); */
+      /* color: rgb(235, 89, 57); */
+      /* background:none; */
       background-color: #D5008F;
     }
 
