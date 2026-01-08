@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 
 <head>
   <meta charset="UTF-8">
@@ -188,10 +188,10 @@
 
 
     #show,.full {display:none;}
-    #show:checked ~ .full {display:block;} 
+    #show:checked ~ .full {display:block;}
 
     .short {display:block;}
-    #show:checked ~ .short {display:none;} 
+    #show:checked ~ .short {display:none;}
 
     .link {
       cursor: pointer;
@@ -202,13 +202,38 @@
     }
 
     .toggle {
-      position: fixed; 
-      top: 0.5em; 
+      position: fixed;
+      top: 0.5em;
       right: 1em;
     }
 
     .toggle a {
       background: none;
+    }
+
+    /* Language toggle */
+    .lang-toggle {
+      position: fixed;
+      top: 0.5em;
+      right: 4em;
+    }
+
+    .lang-toggle a {
+      background: none;
+    }
+
+    /* Hide German content by default */
+    .de {
+      display: none;
+    }
+
+    /* Show German content when html has lang="de" */
+    html[lang="de"] .en {
+      display: none;
+    }
+
+    html[lang="de"] .de {
+      display: block;
     }
 
     .greyscale {
@@ -271,32 +296,57 @@
       </div>
 
 
+      <!-- Language Toggle -->
+      <div class="lang-toggle np">
+        <a class="link np en" onclick="toggleLanguage()" title="Switch to German / Auf Deutsch wechseln">🇩🇪</a>
+        <a class="link np de" onclick="toggleLanguage()" title="Switch to English / Auf Englisch wechseln">🇬🇧</a>
+      </div>
+
       <input checked type=checkbox id="show" class="np"/>
       <label for="show" class="short np toggle"><a class="link np" title="Show full version">🩳</a></label>
       <label for="show" class="full np toggle"><a class="link np greyscale" title="Show bullshit-free version">🩳</a></label>
       
-      <p class="short">
+      <!-- English Version -->
+      <p class="short en">
         Hello! I am Marat, I am a software engineer and I design and develop software.
       </p>
 
-      <p class="full">
-        Hello! I am Marat, a skilled software engineer with a passion for creating 
-        high-quality software solutions. With a strong foundation in software development 
-        principles and methodologies, I specialize in designing and implementing robust and 
-        scalable applications. My expertise spans across various programming languages 
-        and technologies, allowing me to tackle diverse software development projects 
-        with precision and efficiency. I am committed to staying up-to-date with the 
-        latest industry trends and continuously expanding my skill set to deliver 
+      <p class="full en">
+        Hello! I am Marat, a skilled software engineer with a passion for creating
+        high-quality software solutions. With a strong foundation in software development
+        principles and methodologies, I specialize in designing and implementing robust and
+        scalable applications. My expertise spans across various programming languages
+        and technologies, allowing me to tackle diverse software development projects
+        with precision and efficiency. I am committed to staying up-to-date with the
+        latest industry trends and continuously expanding my skill set to deliver
         innovative and cutting-edge software solutions.
       </p>
 
+      <!-- German Version -->
+      <p class="short de">
+        Hallo! Ich bin Marat, ich bin Softwareentwickler und ich entwerfe und entwickle Software.
+      </p>
 
-      <h2 class="fw8" id="skills">Skills</h2>
+      <p class="full de">
+        Hallo! Ich bin Marat, ein erfahrener Softwareentwickler mit einer Leidenschaft für die
+        Entwicklung hochwertiger Softwarelösungen. Mit einem soliden Fundament in
+        Softwareentwicklungsprinzipien und -methoden spezialisiere ich mich auf das Design und
+        die Implementierung robuster und skalierbarer Anwendungen. Meine Expertise erstreckt sich
+        über verschiedene Programmiersprachen und Technologien, was es mir ermöglicht, vielfältige
+        Softwareentwicklungsprojekte mit Präzision und Effizienz anzugehen. Ich bin bestrebt,
+        mit den neuesten Branchentrends Schritt zu halten und meine Fähigkeiten kontinuierlich
+        zu erweitern, um innovative und zukunftsweisende Softwarelösungen zu liefern.
+      </p>
+
+
+      <h2 class="fw8 en" id="skills">Skills</h2>
+      <h2 class="fw8 de" id="skills">Fähigkeiten</h2>
 
       <div>
         <dl class="f6 lh-title mv2">
           <dd class="dib ml0 gray">
-            <span class="b black-70">Programming languages:</span>
+            <span class="b black-70 en">Programming languages:</span>
+            <span class="b black-70 de">Programmiersprachen:</span>
             <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Java</span> 
             <span class="ba br2 ph1 f7 sans-serif">Kotlin</span>
             <span class="ba br2 ph1 f7 sans-serif">Python</span>
@@ -304,7 +354,8 @@
         </dl>
         <dl class="f6 lh-title mv2">
           <dd class="dib ml0 gray">
-            <span class="b black-70">Build tools:</span>
+            <span class="b black-70 en">Build tools:</span>
+            <span class="b black-70 de">Build-Tools:</span>
             <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Gradle</span>
             <span class="ba br2 ph1 f7 sans-serif">Maven</span>
           </dd>
@@ -331,14 +382,16 @@
         </dl>
         <dl class="f6 lh-title mv2">
           <dd class="dib ml0 gray">
-            <span class="b black-70">Asynchronous event processing:</span>
+            <span class="b black-70 en">Asynchronous event processing:</span>
+            <span class="b black-70 de">Asynchrone Ereignisverarbeitung:</span>
             <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Kafka</span>
             <span class="ba br2 ph1 f7 sans-serif">RabbitMQ</span>
           </dd>
         </dl>
         <dl class="f6 lh-title mv2">
           <dd class="dib ml0 gray">
-            <span class="b black-70">Version control:</span>
+            <span class="b black-70 en">Version control:</span>
+            <span class="b black-70 de">Versionskontrolle:</span>
             <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Git</span>
             <span class="ba br2 ph1 f7 sans-serif">Mercurial</span>
           </dd>
@@ -355,7 +408,8 @@
         </dl>
         <dl class="f6 lh-title mv2">
           <dd class="dib ml0 gray">
-            <span class="b black-70">Non Technical:</span>
+            <span class="b black-70 en">Non Technical:</span>
+            <span class="b black-70 de">Nicht-technisch:</span>
             <span class="ba br2 ph1 f7 sans-serif">Team Management</span>
             <span class="ba br2 ph1 f7 sans-serif">Scrum</span>
             <span class="ba br2 ph1 f7 sans-serif">Kanban</span>
@@ -363,17 +417,20 @@
         </dl>
         <dl class="f6 lh-title mv2">
           <dd class="dib ml0 gray">
-            <span class="b black-70">Others:</span>
+            <span class="b black-70 en">Others:</span>
+            <span class="b black-70 de">Sonstiges:</span>
             <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">Hazelcast</span>
           </dd>
         </dl>
       </div>
 
-      <h2 class="fw8">Work Experience</h2>
+      <h2 class="fw8 en">Work Experience</h2>
+      <h2 class="fw8 de">Berufserfahrung</h2>
 
       <p>
-        <strong class="fw8 job-title" id="instana">Senior Software engineer, Instana (IBM)</strong><br>
-        <em>Observability Platform, APM. Germany, 03/2021-present</em><br>
+        <strong class="fw8 job-title" id="instana"><span class="en">Senior Software engineer, Instana (IBM)</span><span class="de">Senior Softwareentwickler, Instana (IBM)</span></strong><br>
+        <em class="en">Observability Platform, APM. Germany, 03/2021-present</em>
+        <em class="de">Observability-Plattform, APM. Deutschland, 03/2021-heute</em><br>
         <a href="https://www.instana.com/">instana.com</a>
       </p>
 
@@ -390,29 +447,45 @@
       </p>
 
       <blockquote class="full">
-        <p class="hp">
-          Instana is an application performance monitoring (APM) platform that helps 
-          organizations monitor and analyze the performance of their applications and 
-          infrastructure in real-time. It provides comprehensive observability into the 
-          entire application stack, including microservices, containers, cloud environments, 
+        <p class="hp en">
+          Instana is an application performance monitoring (APM) platform that helps
+          organizations monitor and analyze the performance of their applications and
+          infrastructure in real-time. It provides comprehensive observability into the
+          entire application stack, including microservices, containers, cloud environments,
           and more.
+        </p>
+        <p class="hp de">
+          Instana ist eine Application Performance Monitoring (APM)-Plattform, die
+          Organisationen dabei hilft, die Leistung ihrer Anwendungen und Infrastruktur
+          in Echtzeit zu überwachen und zu analysieren. Sie bietet umfassende Observability
+          für den gesamten Anwendungsstack, einschließlich Microservices, Container,
+          Cloud-Umgebungen und mehr.
         </p>
       </blockquote>
 
-      <p class="full">
-        As a senior software engineer in Instana's Issue Detection Team, I made valuable contributions 
-        to the development of our advanced application performance monitoring platform. 
-        Through data analysis and innovative approaches, we significantly enhanced the platform's 
-        capabilities. Our solutions empower customers to proactively detect problems and 
+      <p class="full en">
+        As a senior software engineer in Instana's Issue Detection Team, I made valuable contributions
+        to the development of our advanced application performance monitoring platform.
+        Through data analysis and innovative approaches, we significantly enhanced the platform's
+        capabilities. Our solutions empower customers to proactively detect problems and
         address performance issues within their applications and infrastructure at an early stage.
+      </p>
+
+      <p class="full de">
+        Als Senior Softwareentwickler im Issue Detection Team von Instana habe ich wertvolle Beiträge
+        zur Entwicklung unserer fortschrittlichen Application Performance Monitoring-Plattform geleistet.
+        Durch Datenanalyse und innovative Ansätze haben wir die Fähigkeiten der Plattform erheblich
+        verbessert. Unsere Lösungen ermöglichen es Kunden, Probleme proaktiv zu erkennen und
+        Leistungsprobleme in ihren Anwendungen und ihrer Infrastruktur frühzeitig zu beheben.
       </p>
 
       <hr class="bg-black-20">
       <!-- ======================================================= -->
 
       <p>
-        <strong class="fw8 job-title" id="tick-ts">Senior Software engineer, tick Trading Software AG</strong><br>
-        <em>Fintech. Düsseldorf, Germany, 06/2020-02/2021</em><br>
+        <strong class="fw8 job-title" id="tick-ts"><span class="en">Senior Software engineer, tick Trading Software AG</span><span class="de">Senior Softwareentwickler, tick Trading Software AG</span></strong><br>
+        <em class="en">Fintech. Düsseldorf, Germany, 06/2020-02/2021</em>
+        <em class="de">Fintech. Düsseldorf, Deutschland, 06/2020-02/2021</em><br>
         <a href="https://www.tick-ts.com">tick-ts.de</a>
       </p>
 
@@ -426,26 +499,41 @@
       </p>
 
       <blockquote class="full">
-        <p class="hp">
-          Tick TS AG specializes in high-performance trading software for financial markets. 
-          They provide innovative technology solutions to optimize trading strategies and operations, 
+        <p class="hp en">
+          Tick TS AG specializes in high-performance trading software for financial markets.
+          They provide innovative technology solutions to optimize trading strategies and operations,
           helping clients make informed decisions and enhance their trading performance.
+        </p>
+        <p class="hp de">
+          Tick TS AG ist spezialisiert auf Hochleistungs-Handelssoftware für Finanzmärkte.
+          Sie bieten innovative Technologielösungen zur Optimierung von Handelsstrategien und
+          -abläufen und helfen Kunden, fundierte Entscheidungen zu treffen und ihre
+          Handelsleistung zu verbessern.
         </p>
       </blockquote>
 
-      <p class="full">
-        In my role, I was responsible for developing a high-performance distributed trading platform. 
-        Throughout the development process, I conducted rigorous testing and performance analysis 
-        to identify and resolve bottlenecks, ensuring that the trading platform met the stringent 
+      <p class="full en">
+        In my role, I was responsible for developing a high-performance distributed trading platform.
+        Throughout the development process, I conducted rigorous testing and performance analysis
+        to identify and resolve bottlenecks, ensuring that the trading platform met the stringent
         requirements of the financial industry.
+      </p>
+
+      <p class="full de">
+        In meiner Rolle war ich für die Entwicklung einer Hochleistungs-Handelsplattform mit
+        verteilter Architektur verantwortlich. Während des Entwicklungsprozesses führte ich
+        umfangreiche Tests und Leistungsanalysen durch, um Engpässe zu identifizieren und zu
+        beheben und sicherzustellen, dass die Handelsplattform die strengen Anforderungen der
+        Finanzbranche erfüllt.
       </p>
 
       <hr class="bg-black-20">
       <!-- ======================================================= -->
 
       <p>
-        <strong class="fw8 job-title" id="freshcells">Senior Software engineer, freshcells systems engineering GmbH</strong><br>
-        <em>Software development. Düsseldorf, Germany, 06/2018-05/2020</em><br>
+        <strong class="fw8 job-title" id="freshcells"><span class="en">Senior Software engineer, freshcells systems engineering GmbH</span><span class="de">Senior Softwareentwickler, freshcells systems engineering GmbH</span></strong><br>
+        <em class="en">Software development. Düsseldorf, Germany, 06/2018-05/2020</em>
+        <em class="de">Softwareentwicklung. Düsseldorf, Deutschland, 06/2018-05/2020</em><br>
         <a href="https://www.freshcells.de/">freshcells.de</a>
       </p>
 
@@ -472,38 +560,58 @@
 
 
       <div class="full">
-        <strong class="fw8">Project: ProMaterial</strong>
+        <strong class="fw8 en">Project: ProMaterial</strong>
+        <strong class="fw8 de">Projekt: ProMaterial</strong>
         <br>
         <a href="https://www.promaterial.com">promaterial.com</a>
         <div class="">
           
           
           <blockquote>
-            <p class="hp">
-              ProMaterial is the new technology network specialising in online 
-              sales of construction products. The innovative sales concept 
-              supports the search for and the purchase of building materials 
-              within milliseconds in different channels. ProMaterial already 
-              lists 200 manufacturers with 500,000 products for sale in Germany, 
+            <p class="hp en">
+              ProMaterial is the new technology network specialising in online
+              sales of construction products. The innovative sales concept
+              supports the search for and the purchase of building materials
+              within milliseconds in different channels. ProMaterial already
+              lists 200 manufacturers with 500,000 products for sale in Germany,
               Austria and Switzerland.
+            </p>
+            <p class="hp de">
+              ProMaterial ist das neue Technologienetzwerk, das sich auf den Online-Verkauf
+              von Bauprodukten spezialisiert hat. Das innovative Vertriebskonzept unterstützt
+              die Suche und den Kauf von Baumaterialien in Millisekunden über verschiedene
+              Kanäle. ProMaterial listet bereits 200 Hersteller mit 500.000 Produkten zum
+              Verkauf in Deutschland, Österreich und der Schweiz.
             </p>
           </blockquote>
 
-          <p>
-            As a senior backend developer, my role encompassed working on a project that 
-            involved the design, development, and deployment of a event-driven platform 
+          <p class="en">
+            As a senior backend developer, my role encompassed working on a project that
+            involved the design, development, and deployment of a event-driven platform
             based on microservices architecture.
+          </p>
+          <p class="de">
+            Als Senior Backend-Entwickler umfasste meine Rolle die Arbeit an einem Projekt,
+            das das Design, die Entwicklung und den Einsatz einer ereignisgesteuerten Plattform
+            auf Basis einer Microservices-Architektur beinhaltete.
           </p>
 
         </div>
         <div>
-          <strong class="fw8">Project: Fusion</strong>
+          <strong class="fw8 en">Project: Fusion</strong>
+          <strong class="fw8 de">Projekt: Fusion</strong>
           <br>
           <a href="https://www.freshcells.de/en/products/fusion">freshcells.de/products/fusion</a>
-          <p>
-            I was involved in the design and development of reactive microservices 
-            based on Spring Boot. Additionally, I took charge of designing, building, 
+          <p class="en">
+            I was involved in the design and development of reactive microservices
+            based on Spring Boot. Additionally, I took charge of designing, building,
             and maintaining the project's CI/CD pipeline using Jenkins and Bitbucket Pipelines.
+          </p>
+          <p class="de">
+            Ich war am Design und der Entwicklung reaktiver Microservices auf Basis von
+            Spring Boot beteiligt. Zusätzlich übernahm ich die Verantwortung für das Design,
+            den Aufbau und die Wartung der CI/CD-Pipeline des Projekts mit Jenkins und
+            Bitbucket Pipelines.
           </p>
         </div>
       </div>
@@ -511,8 +619,9 @@
       <!-- ======================================================= -->
       
       <p>
-        <strong class="fw8 job-title" id="cinarra">Team lead / Software engineer, Cinarra Systems</strong><br>
-        <em>Advertising Technology. Kazan, Russia, 12/2012–05/2018</em><br>
+        <strong class="fw8 job-title" id="cinarra"><span class="en">Team lead / Software engineer, Cinarra Systems</span><span class="de">Teamleiter / Softwareentwickler, Cinarra Systems</span></strong><br>
+        <em class="en">Advertising Technology. Kazan, Russia, 12/2012–05/2018</em>
+        <em class="de">Werbetechnologie. Kasan, Russland, 12/2012–05/2018</em><br>
         <a href="https://www.cinarra.com/">cinarra.com</a>
       </p>
 
@@ -535,45 +644,81 @@
       </p>
 
       <blockquote class="full">
-        <p class="hp">
+        <p class="hp en">
           Cinarra is a technology startup that is addressing the
           changing economics of an increasingly mobile society. By uniting
-          mobile operators and their unique “always on” data
+          mobile operators and their unique "always on" data
           assets with the advertising ecosystem. Cinarra unlocks real-life
           data that makes it possible for advertisers to match campaigns to
           consumers' activities in the real world. Through groundbreaking
           technology, Cinarra is creating the foundation for a new mobile
           Internet economy.
         </p>
-        <p>
+        <p class="en">
           Leading investors: SoftBank, Almaz Capital, and Cisco Systems.
+        </p>
+        <p class="hp de">
+          Cinarra ist ein Technologie-Startup, das sich mit der sich verändernden
+          Wirtschaft einer zunehmend mobilen Gesellschaft befasst. Durch die Vereinigung
+          von Mobilfunkbetreibern und ihren einzigartigen "always on"-Datenbeständen
+          mit dem Werbe-Ökosystem erschließt Cinarra reale Daten, die es Werbetreibenden
+          ermöglichen, Kampagnen mit den Aktivitäten der Verbraucher in der realen Welt
+          abzugleichen. Durch bahnbrechende Technologie schafft Cinarra die Grundlage
+          für eine neue mobile Internet-Wirtschaft.
+        </p>
+        <p class="de">
+          Führende Investoren: SoftBank, Almaz Capital und Cisco Systems.
         </p>
       </blockquote>
 
       <div class="full">
-        <p>
+        <p class="en">
           During my role, I had the following responsibilities:
           <ul>
             <li>
-              Overseeing a web platform for managing digital advertising 
-              campaigns. This platform empowered advertisers to create 
-              campaigns, set up individual ads with budgets, targeting 
-              parameters, and technical specifications. Additionally, 
-              it facilitated creative management and provided performance 
+              Overseeing a web platform for managing digital advertising
+              campaigns. This platform empowered advertisers to create
+              campaigns, set up individual ads with budgets, targeting
+              parameters, and technical specifications. Additionally,
+              it facilitated creative management and provided performance
               reports.
             </li>
             <li>
-              Managing the financial subsystem, which encompassed the 
-              entire lifecycle of fund management for campaigns. This 
-              involved processes such as adding funds to campaigns 
-              and maintaining detailed records of all credit and debit 
+              Managing the financial subsystem, which encompassed the
+              entire lifecycle of fund management for campaigns. This
+              involved processes such as adding funds to campaigns
+              and maintaining detailed records of all credit and debit
               operations.
             </li>
             <li>
-              Ensuring the integrity and smooth functioning of databases 
-              from a business logic perspective. This included maintaining 
-              data consistency, overseeing data migration processes, and 
+              Ensuring the integrity and smooth functioning of databases
+              from a business logic perspective. This included maintaining
+              data consistency, overseeing data migration processes, and
               ensuring the seamless flow of data.
+            </li>
+          </ul>
+        </p>
+        <p class="de">
+          Während meiner Tätigkeit hatte ich folgende Verantwortlichkeiten:
+          <ul>
+            <li>
+              Überwachung einer Webplattform zur Verwaltung digitaler Werbekampagnen.
+              Diese Plattform ermöglichte es Werbetreibenden, Kampagnen zu erstellen,
+              einzelne Anzeigen mit Budgets, Targeting-Parametern und technischen
+              Spezifikationen einzurichten. Zusätzlich erleichterte sie das
+              Kreativ-Management und lieferte Leistungsberichte.
+            </li>
+            <li>
+              Verwaltung des Finanzsystems, das den gesamten Lebenszyklus der
+              Mittelverwaltung für Kampagnen umfasste. Dies beinhaltete Prozesse
+              wie das Hinzufügen von Mitteln zu Kampagnen und die Führung detaillierter
+              Aufzeichnungen aller Kredit- und Debitvorgänge.
+            </li>
+            <li>
+              Sicherstellung der Integrität und reibungslosen Funktion von Datenbanken
+              aus geschäftslogischer Perspektive. Dies umfasste die Aufrechterhaltung
+              der Datenkonsistenz, die Überwachung von Datenmigrationsprozessen und
+              die Gewährleistung eines nahtlosen Datenflusses.
             </li>
           </ul>
         </p>
@@ -582,8 +727,9 @@
       <!-- ======================================================= -->
 
       <p>
-        <strong class="fw8 job-title" id="cg">Software engineer, Center Group</strong><br>
-        <em>Software Development. Kazan, Russia, 09/2009-11/2012</em><br>
+        <strong class="fw8 job-title" id="cg"><span class="en">Software engineer, Center Group</span><span class="de">Softwareentwickler, Center Group</span></strong><br>
+        <em class="en">Software Development. Kazan, Russia, 09/2009-11/2012</em>
+        <em class="de">Softwareentwicklung. Kasan, Russland, 09/2009-11/2012</em><br>
         <a href="https://www.cg.ru/">cg.ru</a>
       </p>
   
@@ -602,15 +748,27 @@
       </p>
 
       <div class="full">
-        <p>
-          Worked on multiple projects with different technologies.  
+        <p class="en">
+          Worked on multiple projects with different technologies.
           <ul>
             <li>
-              Desktop applications for government agencies: 
+              Desktop applications for government agencies:
               "Technical Inventory Bureau" and "Registry Office"
             </li>
             <li>
               Full-stack development of web applications and portals
+            </li>
+          </ul>
+        </p>
+        <p class="de">
+          Arbeit an mehreren Projekten mit verschiedenen Technologien.
+          <ul>
+            <li>
+              Desktop-Anwendungen für Regierungsbehörden:
+              "Technisches Inventurbüro" und "Standesamt"
+            </li>
+            <li>
+              Full-Stack-Entwicklung von Webanwendungen und Portalen
             </li>
           </ul>
         </p>
@@ -619,8 +777,9 @@
       <!-- ======================================================= -->
 
       <p>
-        <strong class="fw8 job-title" id="pai">Web developer, Volga Crisis Management Institute</strong><br>
-        <em>Software Development. Kazan, Russia, 09/2008-08/2009</em><br>
+        <strong class="fw8 job-title" id="pai"><span class="en">Web developer, Volga Crisis Management Institute</span><span class="de">Webentwickler, Volga Crisis Management Institute</span></strong><br>
+        <em class="en">Software Development. Kazan, Russia, 09/2008-08/2009</em>
+        <em class="de">Softwareentwicklung. Kasan, Russland, 09/2008-08/2009</em><br>
         <a href="http://www.pai.ru/">pai.ru</a>
       </p>
     
@@ -632,18 +791,27 @@
         <span class="ba br2 ph1 f7 sans-serif bg-light-yellow">MySQL</span>
       </p>
 
-      <p class="full">
-        I developed a full-stack web application for a real estate agency, utilizing PHP and JavaScript. 
+      <p class="full en">
+        I developed a full-stack web application for a real estate agency, utilizing PHP and JavaScript.
         This included creating the agency's website and internal administrator panels.
       </p>
 
+      <p class="full de">
+        Ich entwickelte eine Full-Stack-Webanwendung für eine Immobilienagentur unter Verwendung
+        von PHP und JavaScript. Dies umfasste die Erstellung der Website der Agentur und interner
+        Administrator-Panels.
+      </p>
 
-      <h2 class="fw8">Education</h2>
+
+      <h2 class="fw8 en">Education</h2>
+      <h2 class="fw8 de">Ausbildung</h2>
 
       <p>
-        <strong class="fw8 job-title" id="kai">Master of Computer Science</strong><br>
-        Kazan National Research Technical University<br>
-        <em>Diploma with honors, Kazan, Russia, 2005-2010</em><br>
+        <strong class="fw8 job-title" id="kai"><span class="en">Master of Computer Science</span><span class="de">Master in Informatik</span></strong><br>
+        <span class="en">Kazan National Research Technical University</span>
+        <span class="de">Kasaner Nationale Technische Forschungsuniversität</span><br>
+        <em class="en">Diploma with honors, Kazan, Russia, 2005-2010</em>
+        <em class="de">Diplom mit Auszeichnung, Kasan, Russland, 2005-2010</em><br>
         <a href="https://www.kai.ru/web/en">kai.ru</a>
       </p>
 
@@ -658,33 +826,57 @@
 
       <div class="dark-buttons">
         <div class="tc w-100 np mt4">
-          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-pink w4" 
+          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-pink w4"
             href="mailto:maratynsky@gmail.com?subject=Dream%20job&body=Hi%20Marat,">
-            Email me
+            <span class="en">Email me</span>
+            <span class="de">E-Mail senden</span>
           </a>
           
-          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-pink w4" 
+          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-pink w4"
             href="Marat_Tukhvatullin_CV.pdf">
-            Download CV
+            <span class="en">Download CV</span>
+            <span class="de">Lebenslauf herunterladen</span>
           </a>
         </div>
       </div>
 
       <div class="light-buttons">
         <div class="tc w-100 np mt4">
-          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-pink w4" 
+          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-pink w4"
             href="mailto:maratynsky@gmail.com?subject=Dream%20job&body=Hi%20Marat,">
-            Email me
+            <span class="en">Email me</span>
+            <span class="de">E-Mail senden</span>
           </a>
           
-          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-pink w4" 
+          <a target="_blank" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-pink w4"
             href="Marat_Tukhvatullin_CV.pdf">
-            Download CV
+            <span class="en">Download CV</span>
+            <span class="de">Lebenslauf herunterladen</span>
           </a>
         </div>
       </div>
 
     </div>
+
+    <script>
+      function toggleLanguage() {
+        const html = document.getElementById('html-root');
+        const currentLang = html.getAttribute('lang');
+        const newLang = currentLang === 'en' ? 'de' : 'en';
+        html.setAttribute('lang', newLang);
+        
+        // Save preference to localStorage
+        localStorage.setItem('preferredLanguage', newLang);
+      }
+
+      // Load saved language preference on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang) {
+          document.getElementById('html-root').setAttribute('lang', savedLang);
+        }
+      });
+    </script>
 
   </body>
 </html>
