@@ -1,0 +1,99 @@
+:root {
+  color-scheme: light;
+  --background: #fff;
+  --foreground: #171717;
+  --muted: #595959;
+  --border: #dedede;
+  --surface: #f4f4f4;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--background); color: var(--foreground); font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a, button { touch-action: manipulation; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--foreground); outline-offset: 5px; }
+button { font: inherit; cursor: pointer; color: inherit; background: transparent; border: 1px solid var(--border); padding: 10px 16px; min-height: 44px; transition: background-color 160ms, color 160ms; }
+button:hover { background: var(--surface); }
+button:active { background: var(--border); }
+.page { width: min(100% - 96px, 1040px); margin-inline: auto; }
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.home { font-weight: 600; text-decoration: none; }
+.actions, .languages { display: flex; align-items: center; gap: 8px; }
+.languages { gap: 0; }
+.languages button { border: 0; padding: 10px 12px; }
+.languages button[aria-pressed="true"] { background: var(--foreground); color: var(--background); }
+.intro { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: end; padding: 72px 0 56px; }
+.eyebrow { margin: 0 0 20px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; font-weight: 600; }
+h1 { font-size: clamp(40px, 6.5vw, 76px); line-height: 1.04; letter-spacing: -.055em; font-weight: 650; margin: 0; overflow-wrap: anywhere; }
+.period { color: var(--muted); }
+.headline { font-size: 22px; margin: 24px 0 0; letter-spacing: -.025em; }
+address { font-style: normal; font-size: 14px; line-height: 1.8; padding-bottom: 4px; }
+address p { margin: 0 0 12px; color: var(--muted); }
+address a { display: block; overflow-wrap: anywhere; width: fit-content; padding-block: 3px; }
+.section { border-top: 1px solid var(--border); padding: 32px 0 40px; }
+h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 650; margin: 0 0 28px; }
+.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.section-note { font-size: 12px; color: var(--muted); }
+.summary { display: grid; grid-template-columns: 220px 1fr; gap: 40px; }
+.summary p { margin: 0; max-width: 67ch; font-size: 18px; line-height: 1.7; }
+.job { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; padding: 32px 0; border-bottom: 1px solid var(--border); }
+.job:first-of-type { padding-top: 8px; }
+.job:last-child { padding-bottom: 0; border-bottom: 0; }
+.job-meta { color: var(--muted); font-size: 13px; line-height: 1.7; max-width: 25ch; }
+h3 { font-size: 21px; font-weight: 600; letter-spacing: -.025em; line-height: 1.35; margin: 0 0 4px; text-wrap: balance; }
+.job-content p { margin: 16px 0; max-width: 70ch; }
+.job-content .role { margin: 0 0 16px; color: var(--muted); font-size: 15px; }
+.job-content .tech { font-size: 13px; color: var(--muted); line-height: 1.85; }
+.company-link { font-size: 13px; }
+.skills { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px; margin: 0; }
+.skills div { min-width: 0; }
+dt { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+dd { margin: 0; font-size: 14px; color: var(--muted); }
+footer { border-top: 1px solid var(--foreground); padding: 24px 0 40px; display: flex; justify-content: space-between; gap: 24px; font-size: 13px; }
+footer > span { color: var(--muted); }
+.de, html[lang="de"] .en { display: none; }
+html[lang="de"] .de { display: inline; }
+.skip-link { position: absolute; top: 8px; left: 8px; padding: 10px 16px; background: var(--foreground); color: var(--background); transform: translateY(-150%); z-index: 1; }
+.skip-link:focus { transform: translateY(0); }
+@media (max-width: 760px) {
+  .page { width: calc(100% - 48px); }
+  .intro { grid-template-columns: 1fr; gap: 32px; padding: 48px 0 40px; }
+  .summary, .job { grid-template-columns: 1fr; gap: 16px; }
+  .summary h2 { margin-bottom: 0; }
+  .job-meta { max-width: none; }
+  .skills { gap: 24px; }
+}
+@media (max-width: 480px) {
+  .page { width: calc(100% - 40px); }
+  .toolbar { flex-wrap: wrap; gap: 16px; }
+  .actions { width: 100%; justify-content: space-between; }
+  .skills { grid-template-columns: 1fr; }
+  .summary p { font-size: 16px; }
+  footer { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) { button { transition: none; } }
+@media print {
+  @page { size: A4; margin: 14mm; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .page { width: 100%; }
+  .toolbar, .skip-link, footer { display: none; }
+  .intro { grid-template-columns: 1fr auto; padding: 0 0 24px; gap: 24px; }
+  h1 { font-size: 34pt; }
+  .eyebrow { margin-bottom: 10px; }
+  .headline { font-size: 14pt; margin-top: 12px; }
+  address { font-size: 9pt; }
+  .section { padding: 18px 0 20px; }
+  h2 { font-size: 9pt; margin-bottom: 16px; break-after: avoid; }
+  h3 { font-size: 12pt; }
+  .summary, .job { grid-template-columns: 145px minmax(0, 1fr); gap: 24px; }
+  .summary p { font-size: 10pt; }
+  .job { padding: 18px 0; break-inside: avoid; }
+  .job-meta, .job-content .tech, .company-link { font-size: 8pt; }
+  .job-content .role { font-size: 9pt; }
+  .job-content p { margin: 8px 0; }
+  .skills { grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+  dt, dd { font-size: 9pt; }
+  .skills div { break-inside: avoid; }
+  a { text-decoration: none; }
+}
